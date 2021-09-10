@@ -10,6 +10,7 @@ digitalocean安装wiregurad脚本说明
 ssh_start_install.sh
 ---------------------
 自动获取ip，传递给wireguard_install进行连接安装，后拷贝配置文件至本地
+
 wireguard_install
 -----------------
 ssh连接digitalocean上的vps下载wireguard安装脚本并执行，安装完成后重启
