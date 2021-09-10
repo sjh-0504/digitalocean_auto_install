@@ -3,6 +3,7 @@ digitalocean安装wiregurad脚本说明
 前置
 ---------------------
 需在本地安装doct1，和expect</br>
+
 安装expect：Centos系统yum install expect -y或Ubuntu系统apt-get install expect -y
 
 安装doct1：curl -sL https://github.com/digitalocean/doctl/releases/download/v<version>/doctl-<version>-linux-amd64.tar.gz | tar -xzv
