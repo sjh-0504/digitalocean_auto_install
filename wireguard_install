@@ -1,0 +1,26 @@
+#!/usr/bin/expect -f
+
+set IP	   [lindex $argv 0]	
+set USER   root
+
+spawn ssh -i /home/vagrant/.ssh/id_rsa $USER@$IP
+expect {
+    "(yes/no)?" {
+        send "yes\r"
+        }
+    }
+sleep 1
+
+expect "*#"
+ 
+send "curl -O https://raw.githubusercontent.com/teddysun/across/master/wireguard.sh && chmod 755 wireguard.sh && ./wireguard.sh -s\n"
+
+expect "*#"
+
+sleep 80
+
+send "reboot\n"
+
+expect eof
+
+sleep 30
