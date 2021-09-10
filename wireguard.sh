@@ -463,6 +463,8 @@ EOF
 Address = ${SERVER_WG_IPV4}/24
 ListenPort = ${SERVER_WG_PORT}
 PrivateKey = ${SERVER_PRIVATE_KEY}
+PostUp   = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o $eth -j MASQUERADE
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -D FORWARD -o wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o $eth -j MASQUERADE
 
 [Peer]
 PublicKey = ${CLIENT_PUBLIC_KEY}
