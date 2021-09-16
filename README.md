@@ -15,3 +15,7 @@ ssh_start_install.sh
 wireguard_install
 -----------------
 ssh连接digitalocean上的vps下载wireguard安装脚本并执行，安装完成后重启
+
+  使用
+  --------
+./ssh_start_install.sh 你的文件夹名 
