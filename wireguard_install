@@ -13,14 +13,10 @@ sleep 1
 
 expect "*#"
  
-send "curl -O https://raw.githubusercontent.com/teddysun/across/master/wireguard.sh && chmod 755 wireguard.sh && ./wireguard.sh -s\n"
+send "curl -O https://raw.githubusercontent.com/sjh-0504/digitalocean_auto_install/main/wg_mult.sh && chmod +x wg_mult.sh && ./wg_mult.sh\n"
 
 expect "*#"
+sleep 1
+send "\n"
 
-sleep 80
-
-send "reboot\n"
-
-expect eof
-
-sleep 30
+interact
